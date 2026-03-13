@@ -1,10 +1,214 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" style="width:100%; height:100%;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>kekayan's Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Cruz | Economics PhD Candidate</title>
+    <meta name="description" content="Gabriel Cruz - PhD Candidate in Economics at the University of Maryland, College Park.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --color-text: #2d2d2d;
+            --color-text-secondary: #555;
+            --color-accent: #c62828;
+            --color-bg: #ffffff;
+            --color-bg-alt: #fafafa;
+            --color-border: #e0e0e0;
+            --color-link: #1a5276;
+            --color-link-hover: #c62828;
+            --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Source Serif 4', Georgia, serif;
+            --max-width: 820px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 100; backdrop-filter: blur(8px);
+        }
+        nav .nav-inner {
+            max-width: var(--max-width); margin: 0 auto; padding: 0 2rem;
+            display: flex; align-items: center; justify-content: space-between; height: 56px;
+        }
+        nav .nav-name {
+            font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem;
+            color: var(--color-text); text-decoration: none;
+        }
+        nav .nav-links a {
+            text-decoration: none; color: var(--color-text-secondary);
+            font-size: 0.92rem; margin-left: 2rem; transition: color 0.2s; letter-spacing: 0.02em;
+        }
+        nav .nav-links a:hover { color: var(--color-accent); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; }
+        main { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+        section { padding: 4rem 0 2rem; }
+        #about { padding-top: 7rem; }
+        .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; align-items: start; }
+        .profile-photo {
+            width: 220px; height: 270px; object-fit: cover; border-radius: 6px;
+            background: var(--color-bg-alt); border: 1px solid var(--color-border);
+        }
+        .about-text h1 { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .about-text .subtitle { font-size: 1.05rem; color: var(--color-text-secondary); margin-bottom: 1.2rem; }
+        .about-text p { margin-bottom: 1rem; font-size: 0.97rem; }
+        .about-links { margin-top: 1.2rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+        .about-links a { color: var(--color-text-secondary); text-decoration: none; font-size: 1.25rem; transition: color 0.2s; }
+        .about-links a:hover { color: var(--color-accent); }
+        .section-title {
+            font-family: var(--font-serif); font-size: 1.55rem; font-weight: 700;
+            margin-bottom: 1.8rem; padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-accent); display: inline-block;
+        }
+        .research-category { margin-bottom: 2.5rem; }
+        .research-category h3 {
+            font-size: 1.05rem; font-weight: 600; color: var(--color-accent);
+            text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem;
+        }
+        .paper { margin-bottom: 1.5rem; }
+        .paper-title { font-weight: 600; font-size: 1rem; line-height: 1.5; }
+        .paper-authors { font-size: 0.92rem; color: var(--color-text-secondary); margin-top: 0.15rem; }
+        .paper-journal { font-size: 0.92rem; font-style: italic; color: var(--color-text-secondary); margin-top: 0.1rem; }
+        .cv-section p { font-size: 0.97rem; color: var(--color-text-secondary); margin-bottom: 1rem; }
+        .cv-button {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.65rem 1.5rem; background: var(--color-text); color: #fff;
+            text-decoration: none; border-radius: 5px; font-size: 0.92rem; font-weight: 600; transition: background 0.2s;
+        }
+        .cv-button:hover { background: var(--color-accent); }
+        footer {
+            max-width: var(--max-width); margin: 0 auto; padding: 2rem 2rem 3rem;
+            border-top: 1px solid var(--color-border); text-align: center;
+            font-size: 0.85rem; color: var(--color-text-secondary);
+        }
+        footer a { color: var(--color-text-secondary); text-decoration: none; }
+        footer a:hover { color: var(--color-accent); }
+        @media (max-width: 700px) {
+            .about-grid { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+            .profile-photo { margin: 0 auto; width: 180px; height: 220px; }
+            .about-links { justify-content: center; }
+            nav .nav-links {
+                display: none; position: absolute; top: 56px; left: 0; width: 100%;
+                background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--color-border);
+                flex-direction: column; padding: 1rem 2rem;
+            }
+            nav .nav-links.active { display: flex; }
+            nav .nav-links a { margin: 0; padding: 0.6rem 0; border-bottom: 1px solid var(--color-border); }
+            .hamburger { display: block; }
+            section { padding: 3rem 0 1.5rem; }
+            #about { padding-top: 5.5rem; }
+            .about-text h1 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
-  <body style="width:100%; height:100%; margin:0;">
-    <iframe src="https://docs.google.com/gview?url= https://github.com/gabrielcruzfer/gabrielcruzfer.github.io/blob/main/CV/Simple_academic_CV-3.pdf &embedded=true" style="width:100%; height:100%;" frameborder="0"></iframe>
-  </body>
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="#about" class="nav-name">Gabriel Cruz</a>
+        <button class="hamburger" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#cv">CV</a>
+        </div>
+    </div>
+</nav>
+<main>
+<section id="about">
+    <div class="about-grid">
+        <img src="photo.jpg" alt="Gabriel Cruz" class="profile-photo">
+        <div class="about-text">
+            <h1>Gabriel Cruz</h1>
+            <div class="subtitle">PhD Candidate in Economics &middot; University of Maryland</div>
+            <p>Welcome! I am a PhD candidate in Economics at the University of Maryland, College Park. My research interests lie at the intersection of <strong>health economics</strong>, <strong>education</strong>, <strong>labor economics</strong>, and <strong>demography</strong>.</p>
+            <p>Prior to my PhD, I worked as a Senior Research Associate at J-PAL LAC and as a math teacher in Chile through Ense&ntilde;a Chile (Teach For America). I hold an M.A. and B.A. in Economics from Pontificia Universidad Cat&oacute;lica de Chile.</p>
+            <div class="about-links">
+                <a href="mailto:gjcruz@umd.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=lx5fWEAAAAAJ&hl=es" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://x.com/gabrielcruzfer" title="Twitter / X" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="CV/CruzGabriel.pdf" title="Download CV"><i class="fas fa-file-pdf"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="research">
+    <h2 class="section-title">Research</h2>
+    <div class="research-category">
+        <h3>Publications</h3>
+        <div class="paper">
+            <div class="paper-title">Do Students Improve their Academic Achievement when Assigned to a Growth Mindset Teacher?</div>
+            <div class="paper-authors">with Susana Claro, Valentina Paredes, and Ver&oacute;nica Cabezas</div>
+            <div class="paper-journal">Educational Researcher, Volume 54, Issue 7, October 2025</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">The Effects of Equal Pay Laws on Firm Wage Premiums: Evidence from Chile</div>
+            <div class="paper-authors">with Tom&aacute;s Rau</div>
+            <div class="paper-journal">Labour Economics, 75, April 2022</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">COVID-19 and Automation in a Developing Economy: Evidence from Chile</div>
+            <div class="paper-authors">with Pablo Ega&ntilde;a del Sol and Alejandro Micco</div>
+            <div class="paper-journal">Technological Forecasting and Social Change, 176, March 2022</div>
+        </div>
+    </div>
+    <div class="research-category">
+        <h3>Work in Progress</h3>
+        <div class="paper">
+            <div class="paper-title">Preventing Unplanned Pregnancies: Implications for Education, and the Next Generation</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">My Mother Was a Suffragette: The Intergenerational Effects of Women's Right to Vote</div>
+            <div class="paper-authors">with Fernanda Rojas-Ampuero</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">The Power of the Market: How the Contraceptive Industry Affects Birth Rates</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">Heat and Learning: Large-Scale Evidence on Heterogeneous Impacts Across Mexico</div>
+            <div class="paper-authors">with Marcos Fabi&aacute;n</div>
+        </div>
+    </div>
+    <div class="research-category">
+        <h3>Policy Reports</h3>
+        <div class="paper">
+            <div class="paper-title">Desaf&iacute;os presentes y futuros para las mujeres en el mercado laboral en Chile</div>
+            <div class="paper-journal">"Tejiendo rutas. Perspectivas para un Chile con equidad de g&eacute;nero", Fondo de Cultura Econ&oacute;mica, 2023</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">Futuro del Trabajo: Desaf&iacute;os para el Futuro del Trabajo en Chile</div>
+            <div class="paper-journal">"Chile tiene Futuro desde sus Territorios." Ediciones Biblioteca del Congreso Nacional de Chile, 2022</div>
+        </div>
+        <div class="paper">
+            <div class="paper-title">Poder de negociaci&oacute;n y brecha salarial de g&eacute;nero: caso chileno</div>
+            <div class="paper-journal">Revista Estudios de Pol&iacute;ticas P&uacute;blicas, 2(1), 4-22, 2016</div>
+        </div>
+    </div>
+</section>
+<section id="cv">
+    <h2 class="section-title">CV</h2>
+    <p class="cv-section">You can download my full curriculum vitae below.</p>
+    <a href="CV/CruzGabriel.pdf" class="cv-button" target="_blank">
+        <i class="fas fa-download"></i> Download CV
+    </a>
+</section>
+</main>
+<footer>
+    <p>Gabriel Cruz &middot; Department of Economics &middot; University of Maryland, College Park</p>
+    <p style="margin-top: 0.3rem;"><a href="mailto:gjcruz@umd.edu">gjcruz@umd.edu</a></p>
+</footer>
+</body>
 </html>
