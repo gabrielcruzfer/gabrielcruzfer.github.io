@@ -81,6 +81,19 @@
         .paper-title { font-weight: 600; font-size: 1rem; line-height: 1.5; }
         .paper-authors { font-size: 0.92rem; color: var(--color-text-secondary); margin-top: 0.15rem; }
         .paper-journal { font-size: 0.92rem; font-style: italic; color: var(--color-text-secondary); margin-top: 0.1rem; }
+        .abstract-toggle {
+            font-size: 0.82rem; color: var(--color-link); cursor: pointer;
+            background: none; border: 1px solid var(--color-border); border-radius: 3px;
+            padding: 0.15rem 0.55rem; margin-top: 0.35rem; display: inline-block;
+            font-family: var(--font-sans); transition: all 0.2s;
+        }
+        .abstract-toggle:hover { border-color: var(--color-accent); color: var(--color-accent); }
+        .paper-abstract {
+            display: none; font-size: 0.9rem; color: var(--color-text-secondary);
+            margin-top: 0.5rem; padding: 0.8rem 1rem; background: var(--color-bg-alt);
+            border-left: 3px solid var(--color-accent); border-radius: 0 4px 4px 0; line-height: 1.65;
+        }
+        .paper-abstract.open { display: block; }
         .cv-section p { font-size: 0.97rem; color: var(--color-text-secondary); margin-bottom: 1rem; }
         .cv-button {
             display: inline-flex; align-items: center; gap: 0.5rem;
@@ -153,16 +166,22 @@
             <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0927537122000288" target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px dashed #999;">Do Students Improve their Academic Achievement when Assigned to a Growth Mindset Teacher?</a></div>
             <div class="paper-authors">with Susana Claro, Valentina Paredes, and Ver&oacute;nica Cabezas</div>
             <div class="paper-journal">Educational Researcher, Volume 54, Issue 7, October 2025</div>
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">+ Abstract</button>
+            <div class="paper-abstract" id="abstract-1">Growing evidence shows that a student's growth mindset (the belief that intelligence is malleable) can benefit their academic achievement. However, less is known about how a teacher's growth mindset affects their students' academic performance. In this article, we study the impact of being assigned to a teacher with a growth mindset in a nationwide sample from Chile. Using data from two subject teachers per student, we find that having a teacher with a growth mindset increases standardized test scores by approximately 0.02 SD. The effect is larger for students with high grade point averages and those from low socioeconomic backgrounds. Exploratory analysis suggests that growth mindset teachers are more likely to employ effective classroom practices than those with a fixed mindset.</div>
         </div>
         <div class="paper">
             <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0927537122000288?casa_token=3FeNww9o5gcAAAAA:RKIJeaZ2dNXcm0YsnDoDY59A0pwaX4yhbpFyzgdJ5bGmJbRZP95oJgjfZwJ4HykL6Os1qQNA" target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px dashed #999;">The Effects of Equal Pay Laws on Firm Wage Premiums: Evidence from Chile</a></div>
             <div class="paper-authors">with Tom&aacute;s Rau</div>
             <div class="paper-journal">Labour Economics, 75, April 2022</div>
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">+ Abstract</button>
+            <div class="paper-abstract" id="abstract-2">This paper analyzes Chile's 2009 Equal Pay for Equal Work Law (EPL) and its effects on firm pay premiums. The law affected firms with 10 or more workers and specified penalties by firm size, including a disclosure requirement for firms with 200 or more workers. We use matched employer-employee data to estimate worker-firm fixed-effects models, decomposing the firm's contribution to the gender pay gap into bargaining power and sorting channels. The EPL reduces the firm premium gender gap by 6.1%, driven by the bargaining power channel. The effects are larger in firms exposed to higher penalties and disclosure requirements.</div>
         </div>
         <div class="paper">
             <div class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0040162521008040?casa_token=0g9985hJchEAAAAA:_IAN_2hSDFQfvGUiCI6tvj6YmBfI9RJNZCEj4lQ3lNULNdBRqsquZcq24wOQvOh865ZDnwcP" target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px dashed #999;">COVID-19 and Automation in a Developing Economy: Evidence from Chile</a></div>
             <div class="paper-authors">with Pablo Ega&ntilde;a del Sol and Alejandro Micco</div>
             <div class="paper-journal">Technological Forecasting and Social Change, 176, March 2022</div>
+            <button class="abstract-toggle" onclick="toggleAbstract(this)">+ Abstract</button>
+            <div class="paper-abstract" id="abstract-3">This paper analyzes the Covid-19 pandemic impact of the global process of automation on employment in a developing economy. This is particularly interesting because developing economies characteristics, such as having larger informal sectors and weaker social safety nets, shapes the impact of automation on labor markets. We show that occupations with a higher risk of automation exhibit the most significant employment contraction. More specifically, we find that one standard deviation higher in sectoral share of employment in occupations at risk of automation (OaRA) implied around 7% less employment on average between the last quarter of 2019 and the first quarter of 2021. The effect on informal employees is three times more in comparison to formal employees, and the estimation for self-employed workers is not statistically significant. We also find that employees in sector with relatively low compared to high wages, both vis-&agrave;-vis the US, exhibit a 20% smaller reaction on employment due to the pandemic restrictions. We do not find robust evidence showing that the employment contraction has been larger among female workers or in jobs with higher at-work physical proximity, but we do find a positive relationship related to the capacity of working remotely.</div>
         </div>
     </div>
     <div class="research-category">
@@ -210,5 +229,12 @@
     <p>Gabriel Cruz &middot; Department of Economics &middot; University of Maryland, College Park</p>
     <p style="margin-top: 0.3rem;"><a href="mailto:gjcruz@umd.edu">gjcruz@umd.edu</a></p>
 </footer>
+<script>
+function toggleAbstract(btn) {
+    var abs = btn.nextElementSibling;
+    abs.classList.toggle('open');
+    btn.textContent = abs.classList.contains('open') ? '− Abstract' : '+ Abstract';
+}
+</script>
 </body>
 </html>
